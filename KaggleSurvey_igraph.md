@@ -1,10 +1,3 @@
-<style>
-
-body {
-
-text-align: justify}
-
-</style>
 Intro
 =====
 
@@ -50,59 +43,25 @@ In the *multiple choice responses file* we will analyse work tools,
 algorithms, hardware & learning platforms, and in the *free form
 responses file* we will focus on libraries used at work.
 
-    mlch <- read.csv("C:/Users/aljaz_000/Desktop/multipleChoiceResponses.csv", header = TRUE, stringsAsFactors = FALSE) %>% 
+    mlch <- read.csv("C:/multipleChoiceResponses.csv", header = TRUE, stringsAsFactors = FALSE) %>% 
 
     select(WorkToolsSelect, WorkAlgorithmsSelect, WorkHardwareSelect, LearningPlatformSelect, MLTechniquesSelect)
 
 
 
-    freeform <- read.csv("C:/Users/aljaz_000/Desktop/freeformResponses.csv", header = TRUE, stringsAsFactors = FALSE) %>% 
+    freeform <- read.csv("C:/freeformResponses.csv", header = TRUE, stringsAsFactors = FALSE) %>% 
 
     select(WorkLibrariesFreeForm)
 
 Data structure preview
 ======================
 
-Let's see how our data is structured. Most of the columns that we'll
-analyze are structured in this way - several values per row, all
-separated with - in most cases - a comma.
+Most of the columns that we'll analyze contain several values per row,
+all separated with - in most cases - a comma.
 
 There are also empty rows; this means there was no response. In our
 `read.csv` approach this wasn't transformed to `NA`, but the functions
 developed later will handle this.
-
-    kable(head(mlch %>% select(WorkToolsSelect)))
-
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">WorkToolsSelect</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Amazon Web services,Oracle Data Mining/ Oracle R Enterprise,Perl</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Amazon Machine Learning,Amazon Web services,Cloudera,Hadoop/Hive/Pig,Impala,Java,Mathematica,MATLAB/Octave,Microsoft Excel Data Mining,Microsoft SQL Server Data Mining,NoSQL,Python,R,SAS Base,SAS JMP,SQL,Tableau</td>
-</tr>
-<tr class="odd">
-<td align="left">C/C++,Jupyter notebooks,MATLAB/Octave,Python,R,TensorFlow</td>
-</tr>
-<tr class="even">
-<td align="left">Jupyter notebooks,Python,SQL,TensorFlow</td>
-</tr>
-</tbody>
-</table>
 
 Creating useful functions
 =========================
@@ -595,7 +554,7 @@ Programming Tools
 
     custom_igraph(g_tool)
 
-<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-11-1.png" width="100%" />
+<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-10-1.png" width="100%" />
 
 We can clearly see that Python is the most commonly used language,
 followed by R and SQL. They're all frequently linked to Jupyter
@@ -712,7 +671,7 @@ Specific Libraries
 
     custom_igraph(g_libs, ww = 100, wb = 10, dist = 0.4)
 
-<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-12-1.png" width="100%" />
+<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-11-1.png" width="100%" />
 
 Before plotting the libraries, we needed to transform the variable a
 bit, since the responses are in a free format. For example, we want the
@@ -769,7 +728,7 @@ Algorithms
 
     custom_igraph(g_algo)
 
-<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-13-1.png" width="100%" />
+<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-12-1.png" width="100%" />
 
 We can see that the two forms of regression are still the most widely
 used algorithms by Kagglers at work; they are also heavily linked to
@@ -817,7 +776,7 @@ Hardware
 
     custom_igraph(g_hw)
 
-<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-14-1.png" width="100%" />
+<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-13-1.png" width="100%" />
 
 Most frequently used hardware at work seems to be basic laptop
 (MacBook).
@@ -847,7 +806,7 @@ Learning platforms
 
     custom_igraph(g_learn)
 
-<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-15-1.png" width="100%" />
+<img src="KaggleSurvey_igraph_files/figure-markdown_strict/unnamed-chunk-14-1.png" width="100%" />
 
 Well, it's no surprise that Kaggle seems to be the most frequently used
 learning platform! This is mostly followed by online resources such as
