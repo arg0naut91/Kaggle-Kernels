@@ -1,6 +1,6 @@
 # Kaggle Kernels
 
-My kernels from Kaggle.
+My kernels from Kaggle (https://www.kaggle.com/aljaz91/).
 
 ## IBM's attrition
 
