@@ -13,7 +13,7 @@ In this kernel, I'll be working on the following:
 
 •	Trying to strengthen our AUC with implementing different variants of GBM related to class imbalance, since Random Forest and simple GBM seem to perform quite poorly in this case.
 
-## Conclusions & Recommendations##
+## Conclusions & Recommendations
 
 •	The main general reason behind attrition is most likely the **effort-reward imbalance**. In this case, this mostly applies to people who are working overtime and who in many cases have a relatively low salary - it **should be checked whether there is an effective overtime policy in our company**;
 
